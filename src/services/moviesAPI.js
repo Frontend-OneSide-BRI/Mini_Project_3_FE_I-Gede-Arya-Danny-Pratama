@@ -10,6 +10,9 @@ export const moviesApi = createApi({
     popularMovie: build.query({
       query: () => `/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`,
     }),
+    trendingMoviesWeekly: build.query({
+      query: () => `/trending/movie/week?api_key=${API_KEY}`,
+    }),
   }),
 });
 
