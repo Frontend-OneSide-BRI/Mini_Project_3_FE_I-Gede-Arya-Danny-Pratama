@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 import { BASE_IMAGE_URL } from "../api/tmdb";
 import genre from "../app/genre";
 
@@ -42,15 +41,5 @@ function MovieBanner({ item }) {
     </Link>
   );
 }
-
-MovieBanner.propTypes = {
-  item: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    genre_ids: PropTypes.arrayOf(PropTypes.number).isRequired,
-    overview: PropTypes.string.isRequired,
-    backdrop_path: PropTypes.string.isRequired,
-  }).isRequired,
-};
 
 export default MovieBanner;
