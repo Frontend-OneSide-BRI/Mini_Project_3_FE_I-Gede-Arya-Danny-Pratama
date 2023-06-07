@@ -45,6 +45,9 @@ export const moviesApi = createApi({
     seriesRecommendations: build.query({
       query: (id) => `/tv/${id}/recommendations?api_key=${API_KEY}`,
     }),
+    seriesVideos: build.query({
+      query: (id) => `/tv/${id}/videos?api_key=${API_KEY}`,
+    }),
   }),
 });
 
@@ -61,4 +64,5 @@ export const {
   useDetailSeriesQuery,
   useSeriesSimilarQuery,
   useSeriesRecommendationsQuery,
+  useSeriesVideosQuery,
 } = moviesApi;
