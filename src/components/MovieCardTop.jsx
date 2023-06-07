@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { BASE_IMAGE_URL_SMALL } from "../api/tmdb";
+
 function MovieCardTop({ item, top }) {
   const formatDate = (releaseDate) => {
     const date = new Date(releaseDate);
@@ -11,7 +14,32 @@ function MovieCardTop({ item, top }) {
   };
 
   return (
-
+    <Link to={`/movie/${item.id}`}>
+      <div className="movie-card flex flex-col items-center gap-2 cursor-pointer">
+        <div className="flex items-center">
+          <img
+            src={`src/assets/images/r${top}.svg`}
+            alt={item.title}
+            className="object-right w-32"
+          />
+          <img
+            src={
+              item.poster_path
+                ? `${BASE_IMAGE_URL_SMALL}${item.poster_path}`
+                : "src/assets/images/image_not_found.png"
+            }
+            alt={item.title}
+            className="movie-top h-60 w-40 block rounded-sm object-cover object-center"
+          />
+        </div>
+        <p className="movie-card__title font-medium text-center text-lg">
+          {item.title}
+        </p>
+        <p className="text-sm font-light text-center">
+          {item.release_date && formatDate(item.release_date)}
+        </p>
+      </div>
+    </Link>
   );
 }
 
