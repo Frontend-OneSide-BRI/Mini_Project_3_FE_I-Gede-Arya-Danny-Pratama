@@ -13,7 +13,14 @@ export const moviesApi = createApi({
     trendingMoviesWeekly: build.query({
       query: () => `/trending/movie/week?api_key=${API_KEY}`,
     }),
+    trendingSeriesWeekly: build.query({
+      query: () => `/trending/tv/week?api_key=${API_KEY}`,
+    }),
   }),
 });
 
-export const { usePopularMovieQuery } = moviesApi;
+export const {
+  usePopularMovieQuery,
+  useTrendingMoviesWeeklyQuery,
+  useTrendingSeriesWeeklyQuery,
+} = moviesApi;
