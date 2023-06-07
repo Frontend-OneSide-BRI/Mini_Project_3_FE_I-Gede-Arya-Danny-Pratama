@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { BASE_IMAGE_URL_SMALL } from "../api/tmdb";
 
@@ -42,5 +43,15 @@ function MovieCardTop({ item, top }) {
     </Link>
   );
 }
+
+MovieCardTop.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    poster_path: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    release_date: PropTypes.string,
+  }).isRequired,
+  top: PropTypes.number.isRequired,
+};
 
 export default MovieCardTop;
