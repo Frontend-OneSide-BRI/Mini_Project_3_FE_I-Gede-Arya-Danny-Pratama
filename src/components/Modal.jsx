@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import CloseIcon from "../assets/images/ic_close.svg";
 
 function Modal({ modal, setModal, trailerKey }) {
@@ -42,5 +43,11 @@ function Modal({ modal, setModal, trailerKey }) {
     </>
   );
 }
+
+Modal.propTypes = {
+  modal: PropTypes.bool.isRequired,
+  setModal: PropTypes.func.isRequired,
+  trailerKey: PropTypes.string.isRequired,
+};
 
 export default Modal;
