@@ -7,6 +7,12 @@ import {
 import { useParams } from "react-router-dom";
 import { BASE_IMAGE_URL_SMALL } from "../api/tmdb";
 
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
+import { Swiper, SwiperSlide } from "swiper/react";
+import MovieCard from "../components/MovieCard";
+
 function DetailSeries() {
   const { id } = useParams();
   const { data, error, isLoading } = useDetailSeriesQuery(`${id}`);
@@ -105,6 +111,42 @@ function DetailSeries() {
               <div className="h-[46rem]" />
             )}
             <div className="absolute top-0 bg-zinc-900 h-full w-full z-10 opacity-90"></div>
+          </div>
+
+          {/* Similar Series */}
+          <div className="container">
+            <p className="text-xl font-bold mt-16 my-4">Similar Series</p>
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={20}
+              className="mySwiper"
+              breakpoints={{
+                440: {
+                  slidesPerView: 2,
+                },
+                640: {
+                  slidesPerView: 3,
+                },
+                1024: {
+                  slidesPerView: 5,
+                },
+                1280: {
+                  slidesPerView: 6,
+                },
+              }}
+            >
+              {dataSeriesSim.total_results > 0 ? (
+                dataSeriesSim.results.slice(0, 10).map((item) => {
+                  return (
+                    <SwiperSlide key={item.id}>
+                      <MovieCard key={item.id} item={item} movie={false} />
+                    </SwiperSlide>
+                  );
+                })
+              ) : (
+                <p>Not available</p>
+              )}
+            </Swiper>
           </div>
         </>
       ) : null}
