@@ -5,10 +5,12 @@ import {
   useTrendingSeriesWeeklyQuery,
   useTrendingMoviesIndonesiaQuery,
 } from "../services/moviesAPI";
-import MovieBanner from "../components/MovieBanner";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper";
 import Loading from "../components/Loading";
+import MovieBanner from "../components/MovieBanner";
+import MovieCard from "../components/MovieCard";
 
 function Home() {
   useEffect(() => {
@@ -74,6 +76,40 @@ function Home() {
               );
             })}
           </Swiper>
+
+          {/* Trending */}
+          <div className="container">
+            <p className="text-xl font-bold mt-16 my-4">
+              🔥 Trending This Week
+            </p>
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={20}
+              className="mySwiper"
+              breakpoints={{
+                440: {
+                  slidesPerView: 2,
+                },
+                640: {
+                  slidesPerView: 3,
+                },
+                1024: {
+                  slidesPerView: 5,
+                },
+                1280: {
+                  slidesPerView: 6,
+                },
+              }}
+            >
+              {dataTrending.results.map((item) => {
+                return (
+                  <SwiperSlide key={item.id}>
+                    <MovieCard key={item.id} item={item} />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
         </>
       ) : null}
     </div>
