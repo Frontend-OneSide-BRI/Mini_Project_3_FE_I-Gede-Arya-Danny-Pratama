@@ -17,6 +17,7 @@ function App() {
       <div className="mt-20"></div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Page404 />} />
         <Route path="/movie/:id" element={<DetailMovie />} />
         <Route path="/series/:id" element={<DetailSeries />} />
         <Route path="/login" element={<Login />} />
