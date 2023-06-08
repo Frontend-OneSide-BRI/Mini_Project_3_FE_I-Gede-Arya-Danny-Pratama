@@ -14,6 +14,7 @@ https://www.aryaflix.xyz/
 - User can get Similiar Movie from Detail
 - User can get Recommendation Movie from Detail
 - User can see Modal Preview Trailer of each Movie
+- User can filter movie by Category
 - User can search movie they like ❤️
 
 ## Progress Page
@@ -36,7 +37,7 @@ https://www.aryaflix.xyz/
 - The TMDB API : https://api.themoviedb.org/3
 
 ## Home
-![Mini Project 3 - Arya - HomePage](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/48228317-0546-4b13-808e-02777b60e661)
+![Mini Project 3 - Arya - New Homepage](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/8c7db90e-0537-489c-988d-8d823636882a)
 
 ## Detail Movie and Modal Trailer
 ![Mini Project 3 - Arya - DetailMovie](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/27b0e9b6-6c86-46e9-b5de-261b234fe410)
