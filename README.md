@@ -1,15 +1,6 @@
 # Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama
 Mini Project 3 FE React
 
-## Home
-![Mini Project 3 - Arya - Home](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/76f13a70-ec89-4893-b8d6-94efc7068d38)
-
-## Login & Register
-![Mini Project 3 - Arya - Login Register](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/a3cfa7d3-202a-4dd3-91e2-d5be1e8b8289)
-
-
-
-
 ## Progress Page
 - Home : ✅
 - Detail Movie : ⏳
@@ -17,4 +8,20 @@ Mini Project 3 FE React
 - Search : ⏳
 - Login : ✅
 - Register : ✅
-- Not Found 404 : ⏳
+- Not Found 404 : ✅
+
+## Home
+![Mini Project 3 - Arya - HomePage](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/1c4fd6e3-94af-43af-83f2-6e960b8ee77e)
+
+
+## Login & Register
+![Mini Project 3 - Arya - Login and Register](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/6b0ce4bb-f74f-4810-b69f-57afc6b12544)
+
+
+## Page404 Not Found
+![Mini Project 3 - Arya - Page404](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/4e56071d-722d-4872-98ae-cc3e9cdd90bf)
+
+
+
+
+
