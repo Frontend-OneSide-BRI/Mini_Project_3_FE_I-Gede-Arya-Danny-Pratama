@@ -14,8 +14,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import MovieCard from "../components/MovieCard";
 
 function DetailSeries() {
+  window.scrollTo(0, 0);
   const { id } = useParams();
   const { data, error, isLoading } = useDetailSeriesQuery(`${id}`);
+
+  const formatDate = (releaseDate) => {
+    const date = new Date(releaseDate);
+    const formatDate = date.toLocaleDateString("en-us", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+
+    return formatDate;
+  };
 
   const {
     data: dataSeriesSim,
@@ -72,6 +84,7 @@ function DetailSeries() {
                     <div className="flex gap-2">
                       <p className="flex gap-1 w-fit font-semibold text-shadow-white text-zinc-900 text-sm px-2 rounded-sm bg-gradient-to-br from-zinc-200 to-zinc-500">
                         <img src="src\assets\images\ic_calendar.svg" alt="" />
+                        {formatDate(data.first_air_date)}
                       </p>
                       <p className="flex gap-1 w-fit font-semibold text-shadow-white text-zinc-900 text-sm px-2 rounded-sm bg-gradient-to-br from-zinc-200 to-zinc-500">
                         <img src="src\assets\images\ic_clock.svg" alt="" />
