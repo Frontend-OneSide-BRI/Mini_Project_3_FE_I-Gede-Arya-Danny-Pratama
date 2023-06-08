@@ -1,19 +1,57 @@
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../auth/firebase";
 
 function Login() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const [errorMessage, setErrorMessage] = useState("");
   const [isPasswordShown, setIsPasswordShown] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const email = data.get("email");
+    const password = data.get("password");
+
+    try {
+      const { user } = await signInWithEmailAndPassword(auth, email, password);
+      navigate("/");
+      return user;
+    } catch (error) {
+      let errMessage = "There was an error";
+      const sanitizeErrMsg = error.message.split("/")[1].split(")")[0];
+
+      if (sanitizeErrMsg === "too-many-requests") {
+        errMessage = "Too many request. Please try again later";
+      }
+
+      if (sanitizeErrMsg === "wrong-password") {
+        errMessage = "Email and password doesn't match";
+      }
+
+      if (sanitizeErrMsg === "user-not-found") {
+        errMessage = "User not found. Please register";
+      }
+
+      if (sanitizeErrMsg === "email-already-in-use") {
+        errMessage = "Email already in use";
+      }
+
+      setErrorMessage(`* ${errMessage}`);
+    }
+  };
 
   return (
     <div className="flex flex-col items-center my-32 gap-10">
       <div className="flex flex-col gap-3 w-full max-w-md">
         <p className="text-2xl mb-4 text-center">LOGIN</p>
 
-        <form className="flex flex-col gap-3">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
           <input
             type="email"
             name="email"
@@ -43,6 +81,7 @@ function Login() {
             </div>
           </div>
 
+          {errorMessage && <p className="text-red-400">{errorMessage}</p>}
           <button
             type="submit"
             className="bg-red-700 hover:bg-red-800 p-3 rounded-sm"
