@@ -25,10 +25,12 @@ https://www.aryaflix.xyz/
 - Register : ✅
 - 404 Not Found : ✅
 
-## Tech
+## Tech & Libraries
 - HTML, CSS, Javascript
 - React JS with Vite
-- Tailwind CSS
+- Tailwind CSS and Components
+- Swipper Slider
+- React Router DOM
 - State Management Redux Toolkit
 - Authentication Firebase
 - The TMDB API : https://api.themoviedb.org/3
