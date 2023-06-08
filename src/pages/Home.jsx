@@ -1,5 +1,8 @@
 import { useEffect } from "react";
-import { usePopularMovieQuery } from "../services/moviesAPI";
+import {
+  usePopularMovieQuery,
+  useTrendingMoviesWeeklyQuery,
+} from "../services/moviesAPI";
 
 function Home() {
   useEffect(() => {
@@ -11,6 +14,13 @@ function Home() {
     error: errorPopular,
     isLoading: isLoadingPopular,
   } = usePopularMovieQuery();
+
+  const {
+    data: dataTrending,
+    error: errorTrending,
+    isLoading: isLoadingTrending,
+  } = useTrendingMoviesWeeklyQuery();
+
   return <div>INI HOME</div>;
 }
 
