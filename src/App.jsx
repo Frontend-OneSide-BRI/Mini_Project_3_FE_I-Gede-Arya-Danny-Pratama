@@ -6,6 +6,7 @@ function App() {
   return (
     <>
       <Header />
+      <div className="mt-20"></div>
       <Home />
       <Footer />
     </>
