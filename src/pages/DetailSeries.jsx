@@ -1,6 +1,7 @@
 import {
   useDetailSeriesQuery,
   useSeriesSimilarQuery,
+  useSeriesRecommendationsQuery,
 } from "../services/moviesAPI";
 import { useParams } from "react-router-dom";
 
@@ -13,6 +14,12 @@ function DetailSeries() {
     error: errorSeriesSim,
     isLoading: isLoadingSeriesSim,
   } = useSeriesSimilarQuery(`${id}`);
+
+  const {
+    data: dataSeriesRec,
+    error: errorSeriesRec,
+    isLoading: isLoadingSeriesRec,
+  } = useSeriesRecommendationsQuery(`${id}`);
   return (
     <>
       <h1>INI HALAMAN DETAIL SERIES</h1>
