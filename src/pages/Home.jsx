@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import {
   usePopularMovieQuery,
   useTrendingMoviesWeeklyQuery,
+  useTrendingSeriesWeeklyQuery,
 } from "../services/moviesAPI";
 
 function Home() {
@@ -20,6 +21,12 @@ function Home() {
     error: errorTrending,
     isLoading: isLoadingTrending,
   } = useTrendingMoviesWeeklyQuery();
+
+  const {
+    data: dataTrendingSeries,
+    error: errorTrendingSeries,
+    isLoading: isLoadingTrendingSeries,
+  } = useTrendingSeriesWeeklyQuery();
 
   return <div>INI HOME</div>;
 }
