@@ -3,6 +3,7 @@ import {
   useDetailMovieQuery,
   useMovieSimilarQuery,
   useMovieRecommendationsQuery,
+  useMovieVideosQuery,
 } from "../services/moviesAPI";
 
 function DetailMovie() {
@@ -20,6 +21,12 @@ function DetailMovie() {
     error: errorMovieRec,
     isLoading: isLoadingMovieRec,
   } = useMovieRecommendationsQuery(`${id}`);
+
+  const {
+    data: dataMovieVid,
+    error: errorMovieVid,
+    isLoading: isLoadingMovieVid,
+  } = useMovieVideosQuery(`${id}`);
   return (
     <>
       <h1>INI DETAIL PAGE MOVIE</h1>
