@@ -1,14 +1,37 @@
 # Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama
 Mini Project 3 FE React
 
+## Deploy Site
+https://www.aryaflix.xyz/
+
+## Feature
+- User can Register Account
+- User can Login Account
+- User can view List of Trending This Week Movie
+- User can view List of Top 10 Indonesian Movies
+- User can view List of Best Series
+- User can view Detail of each Movie
+- User can get Similiar Movie from Detail
+- User can get Recommendation Movie from Detail
+- User can see Modal Preview Trailer of each Movie
+- User can search movie they like ❤️
+
 ## Progress Page
 - Home : ✅
 - Detail Movie : ✅
-- Detail Series : ⏳
-- Search : ⏳
+- Detail Series : ✅
+- Search : ✅
 - Login : ✅
 - Register : ✅
 - 404 Not Found : ✅
+
+## Tech
+- HTML, CSS, Javascript
+- React JS with Vite
+- Tailwind CSS
+- State Management Redux Toolkit
+- Authentication Firebase
+- The TMDB API : https://api.themoviedb.org/3
 
 ## Home
 ![Mini Project 3 - Arya - HomePage](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/1c4fd6e3-94af-43af-83f2-6e960b8ee77e)
