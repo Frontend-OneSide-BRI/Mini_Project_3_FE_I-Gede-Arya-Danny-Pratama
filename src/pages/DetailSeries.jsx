@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   useDetailSeriesQuery,
   useSeriesSimilarQuery,
@@ -12,11 +13,15 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { Swiper, SwiperSlide } from "swiper/react";
 import MovieCard from "../components/MovieCard";
+import Modal from "../components/Modal";
 
 function DetailSeries() {
   window.scrollTo(0, 0);
   const { id } = useParams();
   const { data, error, isLoading } = useDetailSeriesQuery(`${id}`);
+
+  const [modal, setModal] = useState(false);
+  const [trailerKey, setTrailerKey] = useState("");
 
   const formatDate = (releaseDate) => {
     const date = new Date(releaseDate);
@@ -46,6 +51,21 @@ function DetailSeries() {
     error: errorSeriesVid,
     isLoading: isLoadingSeriesVid,
   } = useSeriesVideosQuery(`${id}`);
+
+  useEffect(() => {
+    setTrailerKey("");
+
+    const getTrailerKey = async () => {
+      const trailerKeyIn = (await dataSeriesVid)
+        ? dataSeriesVid.results.filter((vid) => vid.type === "Trailer")[0]?.key
+        : undefined;
+
+      setTrailerKey(trailerKeyIn);
+    };
+
+    getTrailerKey();
+  }, [dataSeriesVid]);
+
   return (
     <div className="mb-20">
       {error || errorSeriesRec || errorSeriesVid || errorSeriesSim ? (
@@ -67,6 +87,20 @@ function DetailSeries() {
                   className="h-[28rem] w-[18rem] object-cover object-center rounded-md shadow-lg shadow-neutral-900"
                 />
                 <div className="flex max-w-3xl gap-4 flex-col justify-center">
+                  {trailerKey ? (
+                    <button
+                      onClick={() => setModal(true)}
+                      className="flex items-center gap-1 bg-red-700 hover:bg-red-800 w-fit text-zinc-200 cursor-pointer py-2 px-3 rounded-sm"
+                    >
+                      <img src="src\assets\images\ic_play.svg" alt="" />
+                      Watch Trailer
+                    </button>
+                  ) : (
+                    <p className="flex items-center gap-1 bg-zinc-400 w-fit text-black py-2 px-3 rounded-sm">
+                      <img src="src\assets\images\ic_info.svg" alt="" /> Trailer
+                      not available
+                    </p>
+                  )}
                   <div className="my-5">
                     <p className="font-bold text-4xl text-shadow-title leading-[3.35rem]">
                       {`${data.name}`}{" "}
@@ -125,6 +159,9 @@ function DetailSeries() {
             )}
             <div className="absolute top-0 bg-zinc-900 h-full w-full z-10 opacity-90"></div>
           </div>
+
+          {/* Series Trailer */}
+          <Modal modal={modal} setModal={setModal} trailerKey={trailerKey} />
 
           {/* Similar Series */}
           <div className="container">
