@@ -1,9 +1,17 @@
 import { useParams } from "react-router-dom";
-import { useDetailMovieQuery } from "../services/moviesAPI";
+import {
+  useDetailMovieQuery,
+  useMovieSimilarQuery,
+} from "../services/moviesAPI";
 
 function DetailMovie() {
   const { id } = useParams();
   const { data, error, isLoading } = useDetailMovieQuery(`${id}`);
+  const {
+    data: dataMovieSim,
+    error: errorMovieSim,
+    isLoading: isLoadingMovieSim,
+  } = useMovieSimilarQuery(`${id}`);
 
   return (
     <>
