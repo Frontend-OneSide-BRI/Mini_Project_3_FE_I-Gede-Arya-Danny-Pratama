@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Page404() {
   useEffect(() => {
@@ -6,9 +7,14 @@ function Page404() {
   }, []);
 
   return (
-    <>
-      <h1>INI PAGE 404</h1>
-    </>
+    <div className="flex justify-center mt-16 mb-32">
+      <div className="flex flex-col max-w-sm">
+        <img src="src\assets\images\404.png" alt="404 Not Found" className="" />
+        <Link to="/" className="p-2 bg-red-700 text-center rounded-sm">
+          Back
+        </Link>
+      </div>
+    </div>
   );
 }
 
