@@ -148,6 +148,42 @@ function DetailSeries() {
               )}
             </Swiper>
           </div>
+
+          {/* Recommended Series */}
+          <div className="container">
+            <p className="text-xl font-bold mt-10 my-4">Recommended Series</p>
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={20}
+              className="mySwiper"
+              breakpoints={{
+                440: {
+                  slidesPerView: 2,
+                },
+                640: {
+                  slidesPerView: 3,
+                },
+                1024: {
+                  slidesPerView: 5,
+                },
+                1280: {
+                  slidesPerView: 6,
+                },
+              }}
+            >
+              {dataSeriesRec.total_results > 0 ? (
+                dataSeriesRec.results.slice(0, 10).map((item) => {
+                  return (
+                    <SwiperSlide key={item.id}>
+                      <MovieCard key={item.id} item={item} movie={false} />
+                    </SwiperSlide>
+                  );
+                })
+              ) : (
+                <p>Not available</p>
+              )}
+            </Swiper>
+          </div>
         </>
       ) : null}
     </div>
