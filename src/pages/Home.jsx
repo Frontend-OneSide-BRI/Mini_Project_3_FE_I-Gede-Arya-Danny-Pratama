@@ -3,6 +3,7 @@ import {
   usePopularMovieQuery,
   useTrendingMoviesWeeklyQuery,
   useTrendingSeriesWeeklyQuery,
+  useTrendingMoviesIndonesiaQuery,
 } from "../services/moviesAPI";
 
 function Home() {
@@ -27,6 +28,12 @@ function Home() {
     error: errorTrendingSeries,
     isLoading: isLoadingTrendingSeries,
   } = useTrendingSeriesWeeklyQuery();
+
+  const {
+    data: dataInd,
+    error: errorInd,
+    isLoading: isLoadingInd,
+  } = useTrendingMoviesIndonesiaQuery();
 
   return <div>INI HOME</div>;
 }
