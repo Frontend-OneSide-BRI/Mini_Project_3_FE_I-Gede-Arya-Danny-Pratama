@@ -8,6 +8,11 @@ import {
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
+import "swiper/css/pagination";
+
 import Loading from "../components/Loading";
 import MovieBanner from "../components/MovieBanner";
 import MovieCard from "../components/MovieCard";
