@@ -16,6 +16,7 @@ import "swiper/css/pagination";
 import Loading from "../components/Loading";
 import MovieBanner from "../components/MovieBanner";
 import MovieCard from "../components/MovieCard";
+import MovieCardTop from "../components/MovieCardTop";
 
 function Home() {
   useEffect(() => {
@@ -110,6 +111,37 @@ function Home() {
                 return (
                   <SwiperSlide key={item.id}>
                     <MovieCard key={item.id} item={item} />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
+
+          {/* Indonesian Movies */}
+          <div className="container">
+            <p className="text-xl font-bold mt-16 mb-4">
+              🥇 Top 10 Indonesian Movies
+            </p>
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={20}
+              className="mySwiper"
+              breakpoints={{
+                640: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+                1280: {
+                  slidesPerView: 4,
+                },
+              }}
+            >
+              {dataInd.results.slice(0, 10).map((item, index) => {
+                return (
+                  <SwiperSlide key={item.id}>
+                    <MovieCardTop key={item.id} item={item} top={index + 1} />
                   </SwiperSlide>
                 );
               })}
