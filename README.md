@@ -37,8 +37,7 @@ https://www.aryaflix.xyz/
 - The TMDB API : https://api.themoviedb.org/3
 
 ## Home
-![Mini Project 3 - Arya - New Homepage](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/3026cfb4-7bae-40f5-9824-4cbb80578333)
-
+![Mini Project 3 - Arya - New Homepage](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/50448d7e-de1c-44a3-b5a9-15fd5bae27a9)
 
 ## Detail Movie and Modal Trailer
 ![Mini Project 3 - Arya - DetailMovie](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/27b0e9b6-6c86-46e9-b5de-261b234fe410)
