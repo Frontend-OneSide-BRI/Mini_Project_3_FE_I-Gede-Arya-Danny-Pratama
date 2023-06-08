@@ -7,6 +7,12 @@
    font-family: "Inter", "system-ui";
 }
 
+@layer base {
+  body {
+     @apply bg-zinc-900 text-zinc-200;
+  }
+}
+
 .nav-active {
    text-shadow: 2px 1px 1px #da0000;
 }
@@ -63,10 +69,4 @@
 .swiper-pagination-bullet-active {
    box-sizing: border-box;
    border: 2px solid #dfdfdf !important;
-}
-
-@layer base {
-  body {
-     @apply bg-zinc-900 text-zinc-200;
-  }
 }
