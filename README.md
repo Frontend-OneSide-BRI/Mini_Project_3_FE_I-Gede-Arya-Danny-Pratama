@@ -39,19 +39,15 @@ https://www.aryaflix.xyz/
 ## Detail Movie and Modal Trailer
 ![Mini Project 3 - Arya - DetailMovie](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/27b0e9b6-6c86-46e9-b5de-261b234fe410)
 
-
 <br>
 
 ![Mini Project 3 - Arya - Modal DetailMovie](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/e11677ff-3941-4c73-8593-578eff9fac4e)
 
-## Login & Register
+## Search Movie
+![Mini Project 3 - Arya - Search Movie](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/0a4cea44-0050-4564-bf48-18556a94f1bf)
 
+## Login & Register
 ![Mini Project 3 - Arya - Login and Register](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/540baeb7-8026-4016-b432-fcf2ebacebc4)
 
 ## 404 Not Found
 ![Mini Project 3 - Arya - Page404](https://github.com/Frontend-OneSide-BRI/Mini_Project_3_FE_I-Gede-Arya-Danny-Pratama/assets/75374189/efcb1b3c-f972-419c-b923-6a7446424084)
-
-
-
-
-
